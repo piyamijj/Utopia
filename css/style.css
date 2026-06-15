@@ -1,14 +1,102 @@
-:root { --bg: #030305; --neon: #00f3ff; --neon-p: #bd00ff; }
-body { background: var(--bg); color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+/* --- UTOPIA ANA STİL DOSYASI --- */
+:root {
+    --bg-color: #030305;
+    --card-bg: #09090b;
+    --accent-color: #00c5eb;
+    --accent-glow: rgba(0, 197, 235, 0.2);
+    --text-main: #ffffff;
+    --text-muted: #a1a1aa;
+    --border-color: #1f1f23;
+}
 
-/* DNA Arka Planı için düzenleme */
-#dna-canvas { position: fixed; top: 0; left: 0; z-index: -1; width: 100vw; height: 100vh; }
+/* Genel Düzen */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
 
-.hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
-.hero h1 { font-family: 'Orbitron'; font-size: 5rem; letter-spacing: 5px; }
-.neon-text { color: var(--neon); text-shadow: 0 0 20px var(--neon); }
+/* Tipografi */
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
 
-.m-card { background: rgba(255,255,255,0.05); padding: 30px; border-left: 4px solid var(--neon); margin: 20px; backdrop-filter: blur(10px); }
-.stats-row { display: flex; justify-content: center; gap: 50px; }
-.stat-box { text-align: center; border: 1px solid rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; }
-.stat-box h2 { color: var(--neon); font-family: 'Orbitron'; font-size: 3rem; }
+/* Hero Bölümü */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #fff, var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Zaman Çizelgesi (Timeline) */
+.timeline-section {
+    padding: 100px 50px;
+    background: #050507;
+}
+
+.timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline-col {
+    background: var(--card-bg);
+    padding: 40px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: 0.4s;
+}
+
+.timeline-col:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.timeline-col h3 { color: var(--accent-color); margin-bottom: 10px; }
+.years { font-family: 'Orbitron'; font-size: 0.9rem; color: var(--text-muted); }
+.probability { display: block; margin: 15px 0; font-weight: bold; color: #34d399; }
+
+.timeline-col ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.timeline-col ul li {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+    color: var(--text-muted);
+}
+
+.timeline-col ul li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 50px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
